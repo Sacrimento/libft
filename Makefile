@@ -6,7 +6,7 @@
 #    By: abouvero <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 11:47:22 by abouvero          #+#    #+#              #
-#    Updated: 2017/11/17 14:57:52 by abouvero         ###   ########.fr        #
+#    Updated: 2017/11/17 15:44:59 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $^
-	@if [ -f $(NAME) ]; then printf "\033[32m\n  [$(NAME) compilated]\n\n"; fi
+	@if [ -f $(NAME) ]; then printf "\033[32m\n  [$(NAME) compiled]\n\n"; fi
 
 %.o:	%.c
 	$(CC) $(FLAGS) -o $@ -c $<
