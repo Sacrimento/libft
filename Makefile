@@ -6,11 +6,11 @@
 #    By: abouvero <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 11:47:22 by abouvero          #+#    #+#              #
-#    Updated: 2017/11/17 15:44:59 by abouvero         ###   ########.fr        #
+#    Updated: 2017/12/16 17:20:50 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_memset.c \
+SRC_NAME = ft_memset.c \
 	   ft_bzero.c \
 	   ft_memcpy.c \
 	   ft_memccpy.c \
@@ -75,25 +75,37 @@ SRCS = ft_memset.c \
 	   ft_list_pop_back.c \
 	   ft_list_push_front.c \
 	   ft_list_push_back.c \
-	   ft_print_list.c
+	   ft_print_list.c \
+	   get_next_line.c
 
-OBJ = $(SRCS:.c=.o)
-NAME = libft.a
+OBJ_NAME = $(SRC_NAME:.c=.o)
+INC_NAME = libft.h \
+		   get_next_line.h
+
+OBJDIR =./obj/
+INCDIR =./includes/
+SRCDIR =./src/
+
+NAME =libft.a
 FLAGS =-Wall -Werror -Wextra
+
+SRC = $(addprefix $(SRCDIR), $(SRC_NAME))
+INC = $(addprefix $(INCDIR), $(INC_NAME))
+OBJ = $(addprefix $(OBJDIR), $(OBJ_NAME))
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rcs $(NAME) $^
-	@if [ -f $(NAME) ]; then printf "\033[32m\n  [$(NAME) compiled]\n\n"; fi
+	ar rcs $(NAME) $(OBJ)
 
-%.o:	%.c
-	$(CC) $(FLAGS) -o $@ -c $<
+$(OBJDIR)%.o: $(SRCDIR)%.c
+	@mkdir -p $(OBJDIR)
+	gcc -o $@ -c $< $(FLAGS)
 
 clean:
-	rm -f *.o
+	@rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
