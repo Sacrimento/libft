@@ -6,7 +6,7 @@
 #    By: abouvero <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 11:47:22 by abouvero          #+#    #+#              #
-#    Updated: 2017/12/16 17:20:50 by abouvero         ###   ########.fr        #
+#    Updated: 2018/01/05 13:13:23 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,8 @@ SRC_NAME = ft_memset.c \
 	   ft_list_push_front.c \
 	   ft_list_push_back.c \
 	   ft_print_list.c \
-	   get_next_line.c
+	   get_next_line.c \
+	   ft_max_itoa_base.c \
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 INC_NAME = libft.h \
