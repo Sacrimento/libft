@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abouvero <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 11:46:51 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/05 13:14:18 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/05 19:01:53 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+char			*ft_strtoupper(char *str);
 
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);

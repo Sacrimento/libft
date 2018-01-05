@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abouvero <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 11:47:22 by abouvero          #+#    #+#              #
-#    Updated: 2018/01/05 13:13:23 by abouvero         ###   ########.fr        #
+#    Updated: 2018/01/05 18:58:18 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRC_NAME = ft_memset.c \
 	   ft_isascii.c \
 	   ft_isprint.c \
 	   ft_toupper.c \
+	   ft_strtoupper.c \
 	   ft_tolower.c \
 	   ft_memalloc.c \
 	   ft_memdel.c \

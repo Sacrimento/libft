@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strtoupper.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:22:37 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/05 19:30:13 by abouvero         ###   ########.fr       */
+/*   Created: 2018/01/05 18:58:31 by abouvero          #+#    #+#             */
+/*   Updated: 2018/01/05 19:31:06 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		ft_toupper(int c)
+char	*ft_strtoupper(char *str)
 {
-	if (c >= 97 && c <= 122)
-		c -= 32;
-	return (c);
+	int		i;
+
+	i = -1;
+	while (str[++i])
+		str[i] = ft_toupper(str[i]) ;
+	return (str);
 }
