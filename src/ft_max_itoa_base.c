@@ -6,13 +6,23 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:15:47 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/05 19:29:27 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/07 19:12:08 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
 #include <stdio.h>
+
+static char		*zero_value(void)
+{
+	char	*s;
+
+	s = malloc(2);
+	*s = '0';
+	*(s + 1) = '\0';
+	return (s);
+}
 
 static char		*init_base(char *basetype)
 {
@@ -58,7 +68,6 @@ char			*ft_max_itoa_base(intmax_t temp, int base)
 	length = count_digit(value, base) + negative;
 	str = ft_strnew(count_digit(value, base) + negative);
 	str[length--] = '\0';
-	(value == 0) ? (str[length--] = 0) : 0;
 	negative ? str[0] = '-' : 0;
 	while (value != 0)
 	{
@@ -67,5 +76,5 @@ char			*ft_max_itoa_base(intmax_t temp, int base)
 		value /= base;
 	}
 	ft_strdel(&basetype);
-	return (str);
+	return (value == 0 ? zero_value() : str);
 }
