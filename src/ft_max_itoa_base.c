@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:15:47 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/07 19:12:08 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/07 19:17:06 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,5 @@ char			*ft_max_itoa_base(intmax_t temp, int base)
 		value /= base;
 	}
 	ft_strdel(&basetype);
-	return (value == 0 ? zero_value() : str);
+	return (temp == 0 ? zero_value() : str);
 }
