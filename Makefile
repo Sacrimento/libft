@@ -6,7 +6,7 @@
 #    By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 11:47:22 by abouvero          #+#    #+#              #
-#    Updated: 2018/01/05 18:58:18 by abouvero         ###   ########.fr        #
+#    Updated: 2018/01/08 16:37:14 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,7 @@ SRC_NAME = ft_memset.c \
 	   ft_print_list.c \
 	   get_next_line.c \
 	   ft_max_itoa_base.c \
+	   ft_umax_itoa_base.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 INC_NAME = libft.h \

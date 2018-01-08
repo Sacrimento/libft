@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 11:46:51 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/05 19:01:53 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/08 16:37:52 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_atoi(const char *str);
 char			*ft_max_itoa_base(intmax_t value, int base);
+char			*ft_umax_itoa_base(uintmax_t value, int base);
 
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
