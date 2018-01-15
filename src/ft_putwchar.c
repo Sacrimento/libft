@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/12 10:47:54 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/12 16:03:09 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 14:52:20 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int				get_encoding_size(unsigned int c)
+int				get_encoding_size(wint_t c)
 {
 	if (c <= 0x7f)
 		return (1);
@@ -45,7 +45,7 @@ unsigned char	get_mask(int size)
 	return (0);
 }
 
-int				ft_putwchar(unsigned int c)
+int				ft_putwchar(wint_t c)
 {
 	int				size;
 	unsigned char	byte;
