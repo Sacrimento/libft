@@ -6,7 +6,7 @@
 #    By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 11:47:22 by abouvero          #+#    #+#              #
-#    Updated: 2018/01/12 15:12:40 by abouvero         ###   ########.fr        #
+#    Updated: 2018/01/16 17:21:11 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,11 +80,23 @@ SRC_NAME = ft_memset.c \
 	   get_next_line.c \
 	   ft_max_itoa_base.c \
 	   ft_umax_itoa_base.c \
-	   ft_putwchar.c 
+	   ft_putwchar.c \
+	   ft_printf/c_conv.c \
+	   ft_printf/colorise.c \
+	   ft_printf/flags.c \
+	   ft_printf/format_validation.c \
+	   ft_printf/ft_printf.c \
+	   ft_printf/get_struct.c \
+	   ft_printf/precision.c \
+	   ft_printf/redirect_comp.c \
+	   ft_printf/redirect.c \
+	   ft_printf/str_converter.c \
+	   ft_printf/width.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 INC_NAME = libft.h \
-		   get_next_line.h
+		   get_next_line.h \
+		   ft_printf.h
 
 OBJDIR =./obj/
 INCDIR =./includes/
@@ -103,8 +115,8 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
-	@mkdir -p $(OBJDIR)
-	gcc -o $@ -c $< $(FLAGS)
+	@mkdir -p $(OBJDIR) && mkdir -p $(OBJDIR)/ft_printf/
+	gcc -o $@ -c $< $(FLAGS) -I $(INCDIR)
 
 clean:
 	@rm -rf $(OBJDIR)

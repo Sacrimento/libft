@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 11:46:51 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 14:53:36 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 17:07:15 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <wchar.h>
 
 # include "get_next_line.h"
+# include "ft_printf.h"
 
 typedef struct	s_list
 {
