@@ -97,18 +97,18 @@ void				c_conv(int *len, t_arg arg, va_list ap)
 	if (arg.att.width_modi == '-')
 	{
 		if (arg.spe == 'c' && arg.flag != 'l')
-			ft_putchar((char)va_arg(ap, void*));
+			ft_putchar((char)va_arg(ap, int));
 		else
-			*len += ft_putwchar((unsigned int)va_arg(ap, void*));
+			*len += ft_putwchar(va_arg(ap, unsigned int));
 		arg.width != 0 ? ft_putstr(s) : 0;
 	}
 	else
 	{
 		arg.width != 0 ? ft_putstr(s) : 0;
 		if (arg.spe == 'c' && arg.flag != 'l')
-			ft_putchar((char)va_arg(ap, void*));
+			ft_putchar((char)va_arg(ap, int));
 		else
-			*len += ft_putwchar((unsigned int)va_arg(ap, void*));
+			*len += ft_putwchar(va_arg(ap, unsigned int));
 	}
 	if (arg.spe == 'c' && arg.flag != 'l')
 		*len += arg.width != 0 ? ft_strlen(s) + 1 : 1;

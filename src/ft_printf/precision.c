@@ -40,7 +40,7 @@ char			*precision(char *str, t_arg arg)
 		return (str);
 	}
 	if (arg.spe == 's' && arg.pre < (int)ft_strlen(str))
-		str[arg.pre == -1 ? ft_strlen(str) + 1 : arg.pre] = '\0';
+		str[arg.pre == -1 ? (int)ft_strlen(str) + 1 : arg.pre] = '\0';
 	else if ((arg.spe == 'd' || arg.spe == 'i' || arg.spe == 'o' || arg.spe ==
 	'p' || arg.spe == 'u' || arg.spe == 'x' || arg.spe == 'X' || arg.spe == 'O')
 				&& (arg.pre > (int)ft_strlen(str) - sign) && arg.flag != 'a')

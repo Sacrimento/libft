@@ -75,16 +75,16 @@ char			*redirect5(t_arg arg, va_list ap)
 	if (arg.spe == 'b')
 	{
 		if (arg.flag == 0)
-			return (ft_umax_itoa_base((unsigned int)va_arg(ap, void *), 2));
+			return (ft_umax_itoa_base(va_arg(ap, unsigned int), 2));
 		else if (arg.flag == 'l')
 			return (ft_umax_itoa_base((unsigned long)va_arg(ap, void *), 2));
 		else if (arg.flag == 'L')
 			return (ft_umax_itoa_base((unsigned long long)va_arg(ap, void *),
 																			2));
 		else if (arg.flag == 'h')
-			return (ft_umax_itoa_base((unsigned short)va_arg(ap, void *), 2));
+			return (ft_umax_itoa_base((unsigned short)va_arg(ap, int), 2));
 		else if (arg.flag == 'H')
-			return (ft_umax_itoa_base((unsigned char)va_arg(ap, void *), 2));
+			return (ft_umax_itoa_base((unsigned char)va_arg(ap, int), 2));
 		else if (arg.flag == 'j')
 			return (ft_umax_itoa_base((uintmax_t)va_arg(ap, void *), 2));
 		else if (arg.flag == 'z')

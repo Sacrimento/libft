@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <wchar.h>
+# include <inttypes.h>
 
 # include "get_next_line.h"
 # include "ft_printf.h"
