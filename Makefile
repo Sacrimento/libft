@@ -20,7 +20,7 @@ SRC_STRSETTER = ft_strcat.c ft_strlcat.c ft_strncat.c ft_strclr.c ft_strcpy.c ft
 SRC_STRTOOLS = ft_strchr.c ft_strcmp.c ft_strequ.c ft_striter.c ft_striter.c ft_striteri.c ft_strlen.c ft_strncmp.c ft_strnequ.c \
 			   ft_strnstr.c ft_strrchr.c ft_strstr.c
 SRC_CONVERT = ft_atoi.c ft_itoa.c ft_max_itoa_base.c ft_umax_itoa_base.c
-SRC_OIPUT = ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+SRC_OIPUT = ft_putchar.c ft_putwchar.c ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 			ft_printf/c_conv.c ft_printf/colorise.c ft_printf/flags.c ft_printf/format_validation.c ft_printf/ft_printf.c ft_printf/get_struct.c \
 			ft_printf/precision.c ft_printf/redirect_comp.c ft_printf/redirect.c ft_printf/str_converter.c ft_printf/width.c
 SRC_ALLOC = ft_memalloc.c ft_memdel.c ft_strdel.c ft_strdup.c
@@ -39,7 +39,7 @@ DSRC_ALLOC = $(addprefix alloc_functions/, $(SRC_ALLOC))
 DSRC_LISTS = $(addprefix lists_functions/, $(SRC_LISTS))
 DSRC_MEM = $(addprefix mem_functions/, $(SRC_MEM))
 
-SRC_NAME =$(DSRC_CHARCECKER) $(DSRC_STRALLOCS) $(DSRC_STRSETTER) $(DSRC_STRTOOLS) $(DSRC_CONVERT) $(DSRC_OIPUT) $(DSRC_ALLOC) $(DSRC_LISTS) $(DSRC_MEM)
+SRC_NAME =$(DSRC_CHARCHECKER) $(DSRC_STRALLOCS) $(DSRC_STRSETTER) $(DSRC_STRTOOLS) $(DSRC_CONVERT) $(DSRC_OIPUT) $(DSRC_ALLOC) $(DSRC_LISTS) $(DSRC_MEM)
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 OBJDIR =./obj/
@@ -61,7 +61,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $^
-	@printf "$(_GREEN)$(NAME) compiled$(_END)\n"
+	@echo "$(_GREEN)$(NAME) compiled$(_END)"
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@mkdir -p $(OBJDIR)
