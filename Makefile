@@ -55,22 +55,28 @@ OBJ = $(addprefix $(OBJDIR), $(OBJ_NAME))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $^
+	@ar rcs $(NAME) $^
+	@printf "$(NAME) compiled\n"
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@mkdir -p $(OBJDIR)
 	@mkdir -p $(OBJDIR)charchecker_functions $(OBJDIR)strallocs_functions $(OBJDIR)strsetter_functions \
 				$(OBJDIR)strtools_functions $(OBJDIR)convert_functions $(OBJDIR)OIput_functions $(OBJDIR)alloc_functions \
 				$(OBJDIR)lists_functions $(OBJDIR)mem_functions $(OBJDIR)OIput_functions/ft_printf
-	gcc -o $@ -c $< $(CFLAGS) -I $(INCDIR)
+	@printf "Compiling $@\r"
+	@gcc -o $@ -c $< $(CFLAGS) -I $(INCDIR)
+	@printf "                                                              \r"
 
 norme:
 	norminette $(SRC) $(INC) | grep "Error\|Warning"
+	@echo "Norme checked"
 
 clean:
 	@rm -rf $(OBJDIR)
+	@echo "Removed object files"
 
-fclean: clean
+fclean: clean 
 	@rm -f $(NAME)
+	@echo "Removed $(NAME)"
 
 re: fclean all
