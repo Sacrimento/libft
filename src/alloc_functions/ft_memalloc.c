@@ -20,8 +20,6 @@ void	*ft_memalloc(size_t size)
 	i = 0;
 	if (!(new_area = (char*)malloc(sizeof(char) * size)))
 		return (NULL);
-	if (new_area == NULL)
-		return (NULL);
 	while (i < size)
 	{
 		((char*)new_area)[i] = 0;
