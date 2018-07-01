@@ -50,33 +50,38 @@ SRC = $(addprefix $(SRCDIR), $(SRC_NAME))
 INC = $(addprefix $(INCDIR), $(INC_NAME))
 OBJ = $(addprefix $(OBJDIR), $(OBJ_NAME))
 
+_RED=$(shell tput setaf 1)
+_GREEN=$(shell tput setaf 2)
+_CYAN=$(shell tput setaf 6)
+_END=$(shell tput sgr0)
+
 .PHONY: all, re, clean, fclean, norme
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $^
-	@printf "$(NAME) compiled\n"
+	@printf "$(_GREEN)$(NAME) compiled$(_END)\n"
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@mkdir -p $(OBJDIR)
 	@mkdir -p $(OBJDIR)charchecker_functions $(OBJDIR)strallocs_functions $(OBJDIR)strsetter_functions \
 				$(OBJDIR)strtools_functions $(OBJDIR)convert_functions $(OBJDIR)OIput_functions $(OBJDIR)alloc_functions \
 				$(OBJDIR)lists_functions $(OBJDIR)mem_functions $(OBJDIR)OIput_functions/ft_printf
-	@printf "Compiling $@\r"
-	@gcc -o $@ -c $< $(CFLAGS) -I $(INCDIR)
+	@printf "$(_CYAN)Compiling $@$(_END)\r"
+	@$(CC) -o $@ -c $< $(CFLAGS) -I $(INCDIR)
 	@printf "                                                              \r"
 
 norme:
 	norminette $(SRC) $(INC) | grep "Error\|Warning"
-	@echo "Norme checked"
+	@echo "$(_CYAN)Norme checked$(_END)"
 
 clean:
 	@rm -rf $(OBJDIR)
-	@echo "Removed object files"
+	@echo "$(_RED)Removed object files$(_END)"
 
 fclean: clean 
 	@rm -f $(NAME)
-	@echo "Removed $(NAME)"
+	@echo "$(_RED)Removed $(NAME)$(_END)"
 
 re: fclean all
